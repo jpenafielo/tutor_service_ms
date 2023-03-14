@@ -64,9 +64,19 @@ public class tutorServices {
 
         tutorService tutor = tutorRepository.findById(serviceId).get();
 
-        tutor.setIdProfile(tutorDetails.getIdProfile());
+        if (tutorDetails.getIdProfile() != null){
+            tutor.setIdProfile(tutorDetails.getIdProfile());
+        }
         
-        tutor.setDescription(tutorDetails.getDescription());
+        if (tutorDetails.getDescription() != null){
+            tutor.setDescription(tutorDetails.getDescription());
+        }
+            
+            
+        if (tutorDetails.getServiceState() != null){
+            tutor.setServiceState(tutorDetails.getServiceState());
+        }
+            
         
         return tutorRepository.save(tutor);
 

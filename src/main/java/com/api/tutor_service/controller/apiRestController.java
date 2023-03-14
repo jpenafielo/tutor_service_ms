@@ -33,9 +33,9 @@ public class apiRestController {
         
         //Create Rate
         @RequestMapping(value="/rates", method = RequestMethod.POST)      
-        public ResponseEntity<rateAptitude> createRateAptitude(@RequestBody rateAptitude rateApt) {
-            rateAptitude newRateApt = rateService.createRateAptitude(rateApt);
-            return new ResponseEntity<>(newRateApt, HttpStatus.CREATED);
+        public ResponseEntity<String> createRateAptitude(@RequestBody rateAptitude rateApt) {
+            rateService.createRateAptitude(rateApt);
+            return new ResponseEntity<>("Operation success...", HttpStatus.CREATED);
         }
 
         //Get all rates

@@ -57,11 +57,21 @@ public class rateAptitudeServices {
 
         rateAptitude rate = rateRepository.findById(rateId).get();
         
-        rate.setIdQualifier(rateDetails.getIdQualifier());
+        if (rateDetails.getIdQualifier() != null){
+            rate.setIdQualifier(rateDetails.getIdQualifier());
+        }
 
-        rate.setAptitudeName(rateDetails.getAptitudeName());
+        if (rateDetails.getAptitudeName() != null){
+            rate.setAptitudeName(rateDetails.getAptitudeName());
+        }
 
-        rate.setAptitudeRate(rateDetails.getAptitudeRate());
+        if (rateDetails.getAptitudeRate() != null){
+            rate.setAptitudeRate(rateDetails.getAptitudeRate());
+        }
+
+        if (rateDetails.getAptitudeState() != null){
+            rate.setAptitudeState(rateDetails.getAptitudeState());
+        }
 
         return rateRepository.save(rate);
     
