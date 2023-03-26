@@ -61,6 +61,9 @@ public class rateAptitudeServices {
             rate.setIdQualifier(rateDetails.getIdQualifier());
         }
 
+        if (rateDetails.getService()!=null){
+            rate.setService(rateDetails.getService());
+        }
         if (rateDetails.getAptitudeName() != null){
             rate.setAptitudeName(rateDetails.getAptitudeName());
         }

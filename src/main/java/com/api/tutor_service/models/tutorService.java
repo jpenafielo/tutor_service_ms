@@ -11,7 +11,7 @@ public class tutorService {
         private Long idService;
 
     @Column(name="idprofile")
-    private Long idProfile;
+    private String idProfile;
 
     @Column (name="description")
     private String description;
@@ -26,7 +26,7 @@ public class tutorService {
         return idService;
     }
 
-    public Long getIdProfile() {
+    public String getIdProfile() {
         return idProfile;
     }
 
@@ -43,7 +43,7 @@ public class tutorService {
     //Setters
 
 
-    public void setIdProfile(Long idProfile) {
+    public void setIdProfile(String idProfile) {
         this.idProfile = idProfile;
     }
 

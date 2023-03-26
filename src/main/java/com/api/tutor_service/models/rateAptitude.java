@@ -15,13 +15,13 @@ public class rateAptitude {
     private tutorService service;
 
     @Column(name="idqualifier")
-    private Long idQualifier;
+    private String idQualifier;
     
     @Column(name="aptitudename")
     private String aptitudeName;
 
     @Column(name="aptituderate")
-    private Integer aptitudeRate;
+    private Float aptitudeRate;
 
     @Column(name="aptitudestate")
     private Boolean aptitudeState;
@@ -37,7 +37,7 @@ public class rateAptitude {
         return service;
     }
 
-    public Long getIdQualifier() {
+    public String getIdQualifier() {
         return idQualifier;
     }
 
@@ -45,7 +45,7 @@ public class rateAptitude {
         return aptitudeName;
     }
 
-    public Integer getAptitudeRate() {
+    public Float getAptitudeRate() {
         return aptitudeRate;
     }
 
@@ -65,7 +65,7 @@ public class rateAptitude {
         this.service = service;
     }
 
-    public void setIdQualifier(Long idQualifier) {
+    public void setIdQualifier(String idQualifier) {
         this.idQualifier = idQualifier;
     }
 
@@ -73,7 +73,7 @@ public class rateAptitude {
         this.aptitudeName = name;
     }
 
-    public void setAptitudeRate(Integer rate) {
+    public void setAptitudeRate(Float rate) {
         this.aptitudeRate = rate;
     }
 

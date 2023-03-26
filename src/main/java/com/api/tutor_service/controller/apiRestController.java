@@ -33,9 +33,12 @@ public class apiRestController {
         
         //Create Rate
         @RequestMapping(value="/rates", method = RequestMethod.POST)      
-        public ResponseEntity<String> createRateAptitude(@RequestBody rateAptitude rateApt) {
-            rateService.createRateAptitude(rateApt);
-            return new ResponseEntity<>("Operation success...", HttpStatus.CREATED);
+        public rateAptitude createRateAptitude(@RequestBody rateAptitude rateApt) {
+            try{
+                return rateService.createRateAptitude(rateApt);
+            } catch (Exception e){
+                return null;
+            }
         }
 
         //Get all rates
@@ -69,13 +72,12 @@ public class apiRestController {
 
         //Update rate
         @RequestMapping(value="/rates/{RateId}", method = RequestMethod.PUT)
-        public ResponseEntity<String> updateRate(@PathVariable(value="RateId") Long id, @RequestBody rateAptitude rate) throws Exception {
+        public rateAptitude updateRate(@PathVariable(value="RateId") Long id, @RequestBody rateAptitude rate) throws Exception {
 
-            try {
-                rateService.UpdateRate(id,rate);
-                return new ResponseEntity<>("Operation success", HttpStatus.OK);
-            } catch (Exception e) {
-                return new ResponseEntity<>( "Something wrong happened...", HttpStatus.BAD_REQUEST);
+            try{
+                return rateService.UpdateRate(id, rate);
+            } catch (Exception e){
+                return null;
             }
 
         }
@@ -84,18 +86,13 @@ public class apiRestController {
 
         //CREATE SERVICE
         @RequestMapping(value="/services", method = RequestMethod.POST)
-        public ResponseEntity<String> saveService(@RequestBody tutorService service) {
-
-            try {
-
-                this.tutorService.insertService(service);
-                return new ResponseEntity<>("Operation success", HttpStatus.OK);
-
-            } catch (Exception e) {
-
-                return new ResponseEntity<>( "Something wrong happened...", HttpStatus.BAD_REQUEST);
-
+        public tutorService saveService(@RequestBody tutorService service) {
+            try{
+                return tutorService.insertService(service);
+            } catch (Exception e){
+                return null;
             }
+                
         }
 
         //CONSULTAR SERVICIOS
@@ -113,23 +110,27 @@ public class apiRestController {
         //ELIMINAR SERVICIOS (ACTUALIZARLOS A FALSE)
         @RequestMapping(value="/services/{serviceId}", method=RequestMethod.DELETE)
         public ResponseEntity<String> deleteServiceController(@PathVariable(value = "serviceId") Long id) {
+            
             try {
                 tutorService.deleteService(id);
                 return new ResponseEntity<>("Operation success", HttpStatus.OK);
             } catch (Exception e) {
                 return new ResponseEntity<>( "Something wrong happened...", HttpStatus.BAD_REQUEST);
             }
+
         }
 
         //ACTUALIZAR SERVICIOS
         @RequestMapping(value="/services/{ServiceId}", method = RequestMethod.PUT)
-        public ResponseEntity<String> updateService(@PathVariable(value="ServiceId") Long id, @RequestBody tutorService tutor) throws Exception {
+        public tutorService updateService(@PathVariable(value="ServiceId") Long id, @RequestBody tutorService tutor) throws Exception {
 
             try {
-                tutorService.UpdateService(id,tutor);
-                return new ResponseEntity<>("Operation success", HttpStatus.OK);
+               
+                return  tutorService.UpdateService(id,tutor);
             } catch (Exception e) {
-                return new ResponseEntity<>( "Something wrong happened...", HttpStatus.BAD_REQUEST);
+
+                return null;
+
             }
 
         }
