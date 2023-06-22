@@ -1,26 +1,23 @@
 package com.api.tutor_service.services;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import com.api.tutor_service.exceptions.ResourceNotFoundException;
-import com.api.tutor_service.models.rateAptitude;
+import com.api.tutor_service.Dao.TutorServiceDao;
 import com.api.tutor_service.models.tutorService;
-import com.api.tutor_service.repositories.RateRepository;
-import com.api.tutor_service.repositories.tutorServiceRepository;
+
+
 
 @Service
 public class tutorServices {
+    
 
     @Autowired
-        tutorServiceRepository tutorRepository;
+        TutorServiceDao tutorRepository;
 
-    @Autowired
-        RateRepository rateRepository;
+
 
     public tutorService insertService(tutorService tutor){
         return this.tutorRepository.save(tutor);
@@ -29,7 +26,8 @@ public class tutorServices {
 
     // READ
     public ArrayList<tutorService> getServices() {
-        return (ArrayList<tutorService>) this.tutorRepository.findAll();
+        return (ArrayList<tutorService>) this.tutorRepository.getAllServicesFromSlave() ;
+        
     }
 
     public Optional<tutorService> getServicebyID(Long id) {
@@ -40,20 +38,8 @@ public class tutorServices {
     // DELETE
     public ResponseEntity<Object> deleteService(Long ServiceId) {
            
-        tutorService service = tutorRepository.findById(ServiceId)
-        .orElseThrow(() -> new ResourceNotFoundException("Service" + ServiceId));
+        tutorRepository.deleteById(ServiceId);
 
-        List<rateAptitude> aptitudes = rateRepository.findByServiceIdService(ServiceId);
-
-        for (rateAptitude aptitude : aptitudes) {
-        aptitude.setAptitudeState(false);
-        }
-
-        rateRepository.saveAll(aptitudes);
-
-        service.setServiceState(false);
-
-        tutorRepository.save(service);
 
         return ResponseEntity.ok().build();
     }

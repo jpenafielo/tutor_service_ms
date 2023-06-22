@@ -6,17 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import com.api.tutor_service.models.rateAptitude;
 import com.api.tutor_service.services.rateAptitudeServices;
 import com.api.tutor_service.services.tutorServices;
+import com.api.tutor_service.models.rateAptitude;
 import com.api.tutor_service.models.tutorService;
-
 
 
 @RestController
@@ -25,8 +20,6 @@ public class apiRestController {
         @Autowired
         rateAptitudeServices rateService;
 
-        @Autowired
-        tutorServices tutorService;
 
 
         //RateAptitude Controller
@@ -84,8 +77,11 @@ public class apiRestController {
 
         //TutorService controller
 
+        @Autowired
+        tutorServices tutorService;
+
         //CREATE SERVICE
-        @RequestMapping(value="/services", method = RequestMethod.POST)
+        @PostMapping("/services")
         public tutorService saveService(@RequestBody tutorService service) {
             try{
                 return tutorService.insertService(service);
@@ -96,19 +92,19 @@ public class apiRestController {
         }
 
         //CONSULTAR SERVICIOS
-        @RequestMapping(value="/services", method = RequestMethod.GET)
+        @GetMapping("/services")
         public ArrayList<tutorService> getServicesController() {        
             return this.tutorService.getServices();
         }
         
         //CONSULTAR SERVICIOS POR ID
-        @RequestMapping(value="/services/{serviceId}", method=RequestMethod.GET)
+        @GetMapping("/services/{serviceId}")
         public Optional<tutorService> getServiceById(@PathVariable(value = "serviceId") Long id) {
             return tutorService.getServicebyID(id);
         }
          
         //ELIMINAR SERVICIOS (ACTUALIZARLOS A FALSE)
-        @RequestMapping(value="/services/{serviceId}", method=RequestMethod.DELETE)
+        @DeleteMapping("/services/{serviceId}")
         public ResponseEntity<String> deleteServiceController(@PathVariable(value = "serviceId") Long id) {
             
             try {
@@ -121,7 +117,7 @@ public class apiRestController {
         }
 
         //ACTUALIZAR SERVICIOS
-        @RequestMapping(value="/services/{ServiceId}", method = RequestMethod.PUT)
+        @PutMapping("/services/{ServiceId}")
         public tutorService updateService(@PathVariable(value="ServiceId") Long id, @RequestBody tutorService tutor) throws Exception {
 
             try {
