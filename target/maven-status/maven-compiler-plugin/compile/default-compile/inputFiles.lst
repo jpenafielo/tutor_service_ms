@@ -1,9 +1,13 @@
-C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\services\rateAptitudeServices.java
+C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\annotation\ReadOnlyRepository.java
 C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\models\rateAptitude.java
+C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\repositories\tutorReadOnlyRepository.java
 C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\controller\apiRestController.java
+C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\models\tutorService.java
+C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\TutorServiceApplication.java
+C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\services\rateAptitudeServices.java
+C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\config\DataSourceConfig.java
 C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\repositories\RateRepository.java
 C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\repositories\tutorServiceRepository.java
-C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\models\tutorService.java
 C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\exceptions\ResourceNotFoundException.java
+C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\Dao\TutorServiceDao.java
 C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\services\tutorServices.java
-C:\Users\sebas\OneDrive\Escritorio\Arquisoft\Sustentación\tutoacademy_tutor_service_ms\tutor_service\src\main\java\com\api\tutor_service\TutorServiceApplication.java

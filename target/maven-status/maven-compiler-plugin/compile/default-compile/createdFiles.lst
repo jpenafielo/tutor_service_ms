@@ -1,9 +1,13 @@
+com\api\tutor_service\annotation\ReadOnlyRepository.class
+com\api\tutor_service\TutorServiceApplication.class
+com\api\tutor_service\repositories\tutorServiceRepository.class
+com\api\tutor_service\models\rateAptitude.class
+com\api\tutor_service\config\DataSourceConfig.class
 com\api\tutor_service\services\tutorServices.class
 com\api\tutor_service\exceptions\ResourceNotFoundException.class
 com\api\tutor_service\repositories\RateRepository.class
 com\api\tutor_service\services\rateAptitudeServices.class
 com\api\tutor_service\controller\apiRestController.class
-com\api\tutor_service\TutorServiceApplication.class
-com\api\tutor_service\repositories\tutorServiceRepository.class
-com\api\tutor_service\models\rateAptitude.class
+com\api\tutor_service\repositories\tutorReadOnlyRepository.class
+com\api\tutor_service\Dao\TutorServiceDao.class
 com\api\tutor_service\models\tutorService.class
